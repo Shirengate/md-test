@@ -16,6 +16,9 @@
     "@types/sanitize-html": "^2.16.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
     "sanitize-html": "^2.17.0",
     "turndown": "^7.2.1",
     "zustand": "^5.0.8"
