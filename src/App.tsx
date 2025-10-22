@@ -9,24 +9,9 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 import sanitizeHtml from "sanitize-html";
 import { useMsg } from "./store";
-import TurndownService from "turndown";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
-
-// Создаем TurndownService с кастомным правилом для underline
-const turndownService = new TurndownService();
-turndownService.addRule("underline", {
-  filter: ["u"],
-  replacement: function (content) {
-    return `_${content}_`;
-  },
-});
-
-// Кастомный компонент для подчеркнутого текста
-const UnderlineText = ({ children }: { children: React.ReactNode }) => (
-  <span style={{ textDecoration: "underline" }}>{children}</span>
-);
 
 const Tiptap = () => {
   const [value, setValue] = useState("");
@@ -57,10 +42,6 @@ const Tiptap = () => {
 };
 
 const Message: FC<{ value: string }> = ({ value }) => {
-  // const markdown = useMemo(() => {
-  //   return turndownService.turndown(value);
-  // }, [value]);
-
   return (
     <div className={`message`}>
       <div className="content">
